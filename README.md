@@ -4,7 +4,8 @@ This project is a mod for *Slay the Spire 2*, designed to enhance the strategic 
 Base By https://github.com/Alchyr/ModTemplate-StS2
 
 Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
-转为中文 ：https://github.com/moyudamowang/Shop-Enhancement/blob/main/README_zh.md
+
+转为中文 ：(https://github.com/moyudamowang/Shop-Enhancement/blob/main/README_zh.md)
 
 ## Features (Default Configuration)
 
