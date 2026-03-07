@@ -3,6 +3,8 @@
 This project is a mod for *Slay the Spire 2*, designed to enhance the strategic depth of shops and reward systems, providing more choices and fun while maintaining game balance.
 Base By https://github.com/Alchyr/ModTemplate-StS2
 
+Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
+
 ## Features (Default Configuration)
 
 This mod includes the following core functional adjustments:
@@ -43,6 +45,9 @@ After a successful build, Mod files will be automatically copied to the game's `
 See releases on the right.
 
 Place the compiled `ShopEnhancement.pck` & `ShopEnhancement.dll` into the game's `mods` directory.
+
+**Note:** You also need to install the dependency [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2).
+Download `BaseLib.dll` and `BaseLib.pck` from its releases and place them in the `mods` directory as well.
 
 ## Directory Structure
 

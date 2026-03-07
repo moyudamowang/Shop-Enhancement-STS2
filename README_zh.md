@@ -3,6 +3,8 @@
 本项目为《Slay the Spire 2》模组，旨在增强商店与奖励系统的策略深度，提供更多选择与趣味性，同时保持游戏平衡。
 Base By https://github.com/Alchyr/ModTemplate-StS2
 
+前置依赖: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
+
 ## 功能特性 (默认配置)
 
 本模组包含以下核心功能调整：
@@ -43,6 +45,9 @@ dotnet publish -c Release
 见右侧 releases 。
 
 将编译后的 `ShopEnhancement.pck & dll` 放入游戏 `mods` 目录。
+
+**注意：** 你还需要安装前置依赖 [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)。
+请从其 Release 页面下载 `BaseLib.dll` 和 `BaseLib.pck` 并一同放入 `mods` 目录。
 
 ## 目录结构
 
