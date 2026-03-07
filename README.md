@@ -1,6 +1,7 @@
 # ShopEnhancement (STS2 Mod)
 
 本项目为《Slay the Spire 2》模组，旨在增强商店与奖励系统的策略深度，提供更多选择与趣味性，同时保持游戏平衡。
+Base By https://github.com/Alchyr/ModTemplate-StS2
 
 ## 功能特性 (默认配置)
 
