@@ -36,6 +36,12 @@ dotnet publish -c Release
 - `ShopEnhancement.dll`
 - `ShopEnhancement.pck` (如果有资源)
 - `mod_manifest.json`
+- 
+## 直接安装
+
+见右侧 releases 。
+
+将编译后的 `ShopEnhancement.pck & dll` 放入游戏 `mods` 目录。
 
 ## 目录结构
 
