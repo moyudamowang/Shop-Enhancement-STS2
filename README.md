@@ -1,56 +1,56 @@
 # ShopEnhancement (STS2 Mod)
 
-本项目为《Slay the Spire 2》模组，旨在增强商店与奖励系统的策略深度，提供更多选择与趣味性，同时保持游戏平衡。
+This project is a mod for *Slay the Spire 2*, designed to enhance the strategic depth of shops and reward systems, providing more choices and fun while maintaining game balance.
 Base By https://github.com/Alchyr/ModTemplate-StS2
 
-## 功能特性 (默认配置)
+## Features (Default Configuration)
 
-本模组包含以下核心功能调整：
+This mod includes the following core functional adjustments:
 
-### 1. 商店卡牌移除优化
-- **更灵活的费用**：初始移除费用调整为 **50 金币**（原版 75），后续每次增加 25 金币。鼓励玩家早期精简卡组。
-- **多次移除**：每进入一次商店，最多可移除 **3 张** 卡牌（需支付递增费用）。
+### 1. Card Removal Optimization
+- **Flexible Cost**: Initial removal cost adjusted to **50 Gold** (Vanilla is 75), increasing by 25 Gold each time. Encourages players to streamline their deck early.
+- **Multiple Removals**: You can remove up to **3 cards** per shop visit (with increasing costs).
 
-### 2. 商店刷新机制
-- **刷新商品**：花费 **40 金币** 刷新商店内的所有卡牌、遗物和药水。
-- **次数限制**：每家商店限刷新 **3 次**，防止过度滥用。
+### 2. Shop Refresh Mechanism
+- **Refresh Goods**: Spend **40 Gold** to refresh all cards, relics, and potions in the shop.
+- **Limit**: Refresh is limited to **3 times** per shop to prevent excessive abuse.
 
-### 3. 经济补偿机制
-- **未购物奖励**：如果离开商店时未购买任何物品，将获得 **15 金币** 的路费补偿。
-- **跳过卡牌奖励**：战斗胜利后，若选择跳过卡牌奖励，将获得 **15 金币**。
+### 3. Economic Compensation Mechanism
+- **No Shopping Bonus**: If you leave the shop without purchasing any items, you will receive **15 Gold** as travel expenses.
+- **Skip Card Reward**: After winning a battle, if you choose to skip the card reward, you will receive **15 Gold**.
 
-### 4. 跨职业卡牌
-- **更多样化的构筑**：商店中的卡牌有 **20%** 的概率被替换为其他职业的卡牌，为构筑带来意外惊喜与全新思路。
+### 4. Cross-Class Cards
+- **More Diverse Builds**: Cards in the shop have a **20%** chance to be replaced by cards from other classes, bringing unexpected surprises and new ideas to your build.
 
-### 5. 全内容解锁
-- **一键解锁**：进入主菜单时自动解锁所有卡牌、遗物、药水以及**全部角色**（通过揭示所有纪元实现）。无需繁琐的刷图过程，直接体验游戏全部内容。
+### 5. Full Content Unlock
+- **One-Click Unlock**: Automatically unlocks all cards, relics, potions, and **all characters** (by revealing all epochs) when entering the main menu. No need for tedious grinding, experience all game content directly.
 
-## 构建与安装
+## Build & Install
 
-在项目根目录执行：
+Execute in the project root directory:
 
 ```powershell
 dotnet publish -c Release
 ```
 
-构建成功后，Mod 文件将自动复制到游戏目录的 `mods` 文件夹：
+After a successful build, Mod files will be automatically copied to the game's `mods` folder:
 - `ShopEnhancement.dll`
-- `ShopEnhancement.pck` (如果有资源)
+- `ShopEnhancement.pck` (if resources exist)
 - `mod_manifest.json`
-- 
-## 直接安装
 
-见右侧 releases 。
+## Direct Installation
 
-将编译后的 `ShopEnhancement.pck & dll` 放入游戏 `mods` 目录。
+See releases on the right.
 
-## 目录结构
+Place the compiled `ShopEnhancement.pck` & `ShopEnhancement.dll` into the game's `mods` directory.
 
-- `ShopEnhancement/`：模组主要逻辑与补丁代码
-- `ShopEnhancementConfig.cs`：核心数值配置文件
-- `mod_manifest.json`：模组元数据
+## Directory Structure
 
-## 备注
+- `ShopEnhancement/`: Mod main logic and patch code
+- `ShopEnhancementConfig.cs`: Core numerical configuration file
+- `mod_manifest.json`: Mod metadata
 
-- 模组通过 Harmony 注入逻辑，兼容性取决于游戏版本。
-- 若导出失败或游戏提示未加载，优先检查游戏目录 `mods` 是否包含 `ShopEnhancement.dll` 与 `mod_manifest.json`。
+## Notes
+
+- The mod injects logic via Harmony; compatibility depends on the game version.
+- If export fails or the game prompts that it is not loaded, prioritize checking if the game directory `mods` contains `ShopEnhancement.dll` and `mod_manifest.json`.
