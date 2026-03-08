@@ -2,6 +2,6 @@
   "pck_name": "ShopEnhancement",
   "name": "ShopEnhancement",
   "author": "DY",
-  "description": "Adds enhancements to the shop, such as no purchase reward and skip card reward gold.",
-  "version": "v0.1"
+  "description": "Enhances shops with sell mode, refresh, card removal tweaks, and more strategic rewards.",
+  "version": "v0.2"
 }

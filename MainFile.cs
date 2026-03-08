@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Text.Json;
 using Godot;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Modding;
 
 namespace ShopEnhancement;
@@ -42,5 +45,66 @@ public partial class MainFile : Node
         Harmony harmony = new(ModId);
 
         harmony.PatchAll();
+    }
+
+    public static void OnLocaleChanged()
+    {
+        LoadLocalization();
+    }
+
+    private static void LoadLocalization()
+    {
+        string lang = LocManager.Instance.Language;
+        // Check if we have localization for this language, otherwise fallback to en
+        // Note: The path depends on where the files are located in the exported project.
+        // Assuming they are under ShopEnhancement/localization/
+        string path = $"res://ShopEnhancement/localization/{lang}.json";
+        if (!Godot.FileAccess.FileExists(path))
+        {
+            // Try explicit fallback to en if current lang is not found
+            if (lang != "en")
+            {
+                path = "res://ShopEnhancement/localization/en.json";
+            }
+        }
+        
+        if (!Godot.FileAccess.FileExists(path))
+        {
+             // Only log error if we really can't find anything
+             // It might be fine if we are in editor or running tests differently
+             Logger.Info($"Could not find localization file: {path}");
+             return;
+        }
+
+        using var file = Godot.FileAccess.Open(path, Godot.FileAccess.ModeFlags.Read);
+        string jsonText = file.GetAsText();
+        
+        try 
+        {
+            // LocManager uses a specific serializer context, but standard Deserialize should work for Dictionary<string, string>
+            var dict = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonText);
+            if (dict == null) return;
+            
+            // We'll use a custom table name "shop_enhancement"
+            var tableName = "shop_enhancement";
+            var table = new LocTable(tableName, dict);
+            
+            // Inject into LocManager._tables via reflection
+            var tablesField = typeof(LocManager).GetField("_tables", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (tablesField != null)
+            {
+                var tables = (Dictionary<string, LocTable>)tablesField.GetValue(LocManager.Instance);
+                tables[tableName] = table;
+                Logger.Info($"Loaded localization table '{tableName}' for language '{lang}' from {path}");
+            }
+            else
+            {
+                Logger.Error("Could not access LocManager._tables");
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Error($"Failed to load localization: {ex}");
+        }
     }
 }

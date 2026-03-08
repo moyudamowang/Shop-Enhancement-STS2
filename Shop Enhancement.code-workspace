@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sts2"
+		},
+		{
+			"path": "../sts2-multiplayer-damage-stat-main"
+		}
+	],
+	"settings": {}
+}

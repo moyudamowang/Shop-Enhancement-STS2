@@ -5,7 +5,14 @@ Base By https://github.com/Alchyr/ModTemplate-StS2
 
 Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
 
-转为中文 ：(https://github.com/moyudamowang/Shop-Enhancement/blob/main/README_zh.md)
+## Changelog
+
+### v0.2 (Latest)
+- **Added Sell Mode**: You can now sell unwanted relics and potions to the merchant.
+- **Balance Adjustments**:
+  - Relic sell price ratio reduced from 40% to 35%, Potion from 50% to 25%.
+  - Significantly increased the base sell price of Boss Relics (750 Gold base), making selling them a strategic choice.
+  - Slightly reduced Event Relic sell price.
 
 ## Features (Default Configuration)
 
@@ -28,6 +35,16 @@ This mod includes the following core functional adjustments:
 
 ### 5. Full Content Unlock
 - **One-Click Unlock**: Automatically unlocks all cards, relics, potions, and **all characters** (by revealing all epochs) when entering the main menu. No need for tedious grinding, experience all game content directly.
+
+### 6. Sell Mode
+- **Recycle Resources**: Click the "Enable Sell Mode" button in the shop interface, then **Right-Click** on any Relic or Potion to sell it.
+- **Pricing**:
+    - **Relics**: Sells for **35%** of the merchant price. Special relics (Boss/Starter/Event) have fixed base prices.
+        - *Designer Note: Boss relics are now quite valuable, while event relics fetch less.*
+    - **Potions**: Sells for **25%** of the merchant price.
+        - *Designer Note: Potions are consumables and shouldn't be a primary income source.*
+    - Minimum sell price guaranteed (30 Gold for Relics, 15 Gold for Potions).
+- **Safety**: Selling requires confirmation to prevent accidental sales.
 
 ## Build & Install
 
