@@ -9,7 +9,16 @@ Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
 
 ## Changelog
 
-### v0.2 (Latest)
+### v0.3 (Latest)
+- **Added Gift Mode**:
+  - In multiplayer, you can purchase cards from the shop and gift them to other players.
+  - Added a "Gift Mode" button in the shop interface. Toggle it to switch purchase mode.
+  - Supports selecting a target player for the gift.
+- **UI Improvements**:
+  - Optimized the visuals of Sell Mode and Gift Mode buttons for better clarity.
+  - Gift target now displays both character name and player name (e.g., Steam name).
+
+### v0.2
 - **Added Sell Mode**: You can now sell unwanted relics and potions to the merchant.
 - **Balance Adjustments**:
   - Relic sell price ratio reduced from 40% to 35%, Potion from 50% to 25%.
@@ -46,7 +55,13 @@ This mod includes the following core functional adjustments:
     - **Potions**: Sells for **25%** of the merchant price.
         - *Designer Note: Potions are consumables and shouldn't be a primary income source.*
     - Minimum sell price guaranteed (30 Gold for Relics, 15 Gold for Potions).
-- **Safety**: Selling requires confirmation to prevent accidental sales.
+### 7. Gift Mode (Multiplayer Only)
+- **Share the Wealth**: In multiplayer games, you can buy cards as gifts for other players.
+- **Easy Operation**:
+    - Click "Gift Mode" in the shop to enable.
+    - Click the target button to cycle through available players.
+    - Buy a card as usual, and it will be sent to the selected player's deck!
+- **Visual Feedback**: The recipient will see a notification and the card will fly into their deck.
 
 ## Build & Install
 
