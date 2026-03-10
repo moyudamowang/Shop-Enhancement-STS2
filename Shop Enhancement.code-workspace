@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../sts2-multiplayer-damage-stat-main"
+		},
+		{
+			"path": "../giftgold-sts2-mod-main"
 		}
 	],
 	"settings": {}

@@ -7,7 +7,15 @@ Base By https://github.com/Alchyr/ModTemplate-StS2
 
 ## 更新日志
 
-### v0.3 (最新)
+### v0.3.1 (最新)
+- **联机同步修复**：
+  - 修复了接收 `SyncConfigMessage` 时可能报错 `no message handlers are registered for that type` 的问题。
+  - 将消息处理器注册时机提前到角色选择/网络生命周期阶段，避免远程配置同步异常。
+- **配置面板功能**：
+  - 主菜单新增商店配置面板入口，可在界面中直接调整商店增强参数。
+  - 支持预设保存、读取与切换，方便快速应用不同玩法配置。
+
+### v0.3
 - **新增送礼模式 (Gift Mode)**：
   - 在多人联机模式下，可以在商店购买卡牌并赠送给其他玩家。
   - 商店界面新增“Gift Mode”按钮，点击切换购买模式。

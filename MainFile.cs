@@ -6,6 +6,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Modding;
+using ShopEnhancement.Config;
 
 namespace ShopEnhancement;
 
@@ -41,6 +42,8 @@ public partial class MainFile : Node
                 logMethod.Invoke(null, new object[] { "Harmony debug enabled" });
             }
         }
+
+        ConfigManager.Load();
 
         Harmony harmony = new(ModId);
 

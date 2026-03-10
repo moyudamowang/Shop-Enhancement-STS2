@@ -9,7 +9,15 @@ Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
 
 ## Changelog
 
-### v0.3 (Latest)
+### v0.3.1 (Latest)
+- **Multiplayer Sync Fix**:
+  - Fixed an issue where receiving `SyncConfigMessage` could throw `no message handlers are registered for that type`.
+  - Message handlers are now registered earlier during character-select/network lifecycle to prevent remote config sync errors.
+- **Configuration Panel**:
+  - Added a Shop Config entry in the main menu so players can tune shop-enhancement values in UI.
+  - Supports preset save/load/switch to quickly apply different balance setups.
+
+### v0.3
 - **Added Gift Mode**:
   - In multiplayer, you can purchase cards from the shop and gift them to other players.
   - Added a "Gift Mode" button in the shop interface. Toggle it to switch purchase mode.
