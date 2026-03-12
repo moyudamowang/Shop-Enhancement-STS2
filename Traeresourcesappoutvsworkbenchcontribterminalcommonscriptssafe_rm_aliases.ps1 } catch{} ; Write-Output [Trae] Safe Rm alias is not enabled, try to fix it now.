@@ -1,0 +1,49 @@
+[1mdiff --git a/ShopEnhancement/ShopEnhancementNetwork.cs b/ShopEnhancement/ShopEnhancementNetwork.cs[m
+[1mindex 4376928..2025d45 100644[m
+[1m--- a/ShopEnhancement/ShopEnhancementNetwork.cs[m
+[1m+++ b/ShopEnhancement/ShopEnhancementNetwork.cs[m
+[36m@@ -149,9 +149,17 @@[m [mpublic static class ShopEnhancementNetwork[m
+         // Show notification[m
+         if (player.Creature != null)[m
+         {[m
+[31m-            var loc = new LocString("shop_enhancement", "gift_received_bubble");[m
+[31m-            string text = $"Received gift from {senderName}!";[m
+[31m-            NSpeechBubbleVfx.Create(text, player.Creature, 3.0);[m
+[32m+[m[32m            try[m
+[32m+[m[32m            {[m
+[32m+[m[32m                var loc = new LocString("shop_enhancement", "gift_received_bubble");[m
+[32m+[m[32m                loc.Add("0", senderName);[m
+[32m+[m[32m                string text = loc.GetFormattedText();[m
+[32m+[m[32m                NSpeechBubbleVfx.Create(text, player.Creature, 3.0);[m
+[32m+[m[32m            }[m
+[32m+[m[32m            catch (Exception ex)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                MainFile.Logger.Warn($"Failed to create gift speech bubble: {ex.Message}");[m
+[32m+[m[32m            }[m
+         }[m
+         [m
+         SfxCmd.Play("event:/sfx/ui/reward_screen_open");[m
+[1mdiff --git a/ShopEnhancement/localization/en.json b/ShopEnhancement/localization/en.json[m
+[1mindex a375274..24973f1 100644[m
+[1m--- a/ShopEnhancement/localization/en.json[m
+[1m+++ b/ShopEnhancement/localization/en.json[m
+[36m@@ -65,5 +65,6 @@[m
+   "gift.price_prefix": "Gift ",[m
+   "gift.service_title": "Random Teammate Card Gift Service",[m
+   "gift.service_desc": "Random teammate this shop: {0}\nSelectable card count: {1}\nCost: {2} gold",[m
+[31m-  "gift.service_select_prompt": "Select cards to gift to a random teammate"[m
+[32m+[m[32m  "gift.service_select_prompt": "Select cards to gift to a random teammate",[m
+[32m+[m[32m  "gift_received_bubble": "Received a gifted card from {0}!"[m
+ }[m
+[1mdiff --git a/ShopEnhancement/localization/zhs.json b/ShopEnhancement/localization/zhs.json[m
+[1mindex 6dfbed8..fc572e9 100644[m
+[1m--- a/ShopEnhancement/localization/zhs.json[m
+[1m+++ b/ShopEnhancement/localization/zhs.json[m
+[36m@@ -65,5 +65,6 @@[m
+   "gift.price_prefix": "传牌价 ",[m
+   "gift.service_title": "随机队友传牌服务",[m
+   "gift.service_desc": "本次随机队友：{0}\n可选择传出卡牌数量：{1}\n价格：{2} 金币",[m
+[31m-  "gift.service_select_prompt": "选择要传给随机队友的卡牌"[m
+[32m+[m[32m  "gift.service_select_prompt": "选择要传给随机队友的卡牌",[m
+[32m+[m[32m  "gift_received_bubble": "收到来自 {0} 的传牌！"[m
+ }[m

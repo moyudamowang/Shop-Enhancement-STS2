@@ -9,7 +9,28 @@ Dependency: [BaseLib-StS2](https://github.com/Alchyr/BaseLib-StS2)
 
 ## Changelog
 
-### v0.3.1 (Latest)
+### v0.4 (Latest)
+- **Added Service-Slot Split in Shop**:
+  - Introduced a new special service in the removal slot: **Random Teammate Card Gift Service**, alongside Enchant Service.
+  - Special service type is rolled once on shop entry and remains fixed for that shop.
+  - Random teammate target is locked on shop entry and shown in the hover tip before purchase.
+- **Enchant Service Improvements**:
+  - Added configurable ranges for enchant amount and enchantable card count.
+  - Cost now scales with selected/enchantable card count.
+- **Random Teammate Card Gift Service**:
+  - Select cards from your long-term deck (Deck) and send them to a random teammate.
+  - Added configurable gift-card count range, base cost, and per-card step cost.
+- **Default Balance Retuning**:
+  - `EnchantStartShopVisit`: 4
+  - `EnchantReplaceChance`: 0.30
+  - `EnchantCost`: 105
+  - `EnchantAmountRange`: 1~2
+  - `EnchantCardCountRange`: 1~2
+  - `GiftServiceCardCountRange`: 1~1
+  - `GiftServiceBaseCost`: 85
+  - `GiftServiceStepCost`: 55
+
+### v0.3.1
 - **Multiplayer Sync Fix**:
   - Fixed an issue where receiving `SyncConfigMessage` could throw `no message handlers are registered for that type`.
   - Message handlers are now registered earlier during character-select/network lifecycle to prevent remote config sync errors.
@@ -70,6 +91,16 @@ This mod includes the following core functional adjustments:
     - Click the target button to cycle through available players.
     - Buy a card as usual, and it will be sent to the selected player's deck!
 - **Visual Feedback**: The recipient will see a notification and the card will fly into their deck.
+
+### 8. Service Slot (Removal / Enchant / Random Teammate Gift)
+- **Service Roll Rule**:
+    - Starting from the **4th** shop visit, the service slot has a **30%** chance to become a special service.
+    - The special service is either Enchant or Random Teammate Gift, fixed for the current shop.
+- **Enchant Defaults**:
+    - Base enchant cost **105**, enchant amount range **1~2**, enchantable card count range **1~2**.
+- **Random Teammate Gift Defaults**:
+    - Gift card count range **1~1** (default sends 1 deck card per purchase).
+    - Cost = base **85** + **55** per extra card.
 
 ## Build & Install
 
